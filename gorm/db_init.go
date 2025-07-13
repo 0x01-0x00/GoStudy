@@ -16,6 +16,11 @@ func DBInit() (db *gorm.DB, err error) {
 	// 迁移 schema
 	err = db.AutoMigrate(
 		model.Product{},
+		model.User{},
+		model.Score{},
+		model.Class{},
+		model.Student{},
+		model.Teacher{},
 	)
 	if err != nil {
 		panic("failed to db.AutoMigrate")

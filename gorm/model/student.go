@@ -8,5 +8,8 @@ type Student struct {
 	Age     int    // 年龄
 	Number  string // 学号
 	ClassId uint   // 班级id
-	Score   Score  // 成绩
+	// 嵌入方式1
+	//Score          // 成绩
+	// 嵌入方式2
+	Score Score `gorm:"embedded"` // 成绩
 }
