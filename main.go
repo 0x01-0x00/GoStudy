@@ -34,4 +34,7 @@ func main() {
 	db.Model(&product).Updates(model.Product{Price: 99, Code: "F42"}) // 仅更新非零值字段
 	db.Model(&product).Updates(map[string]interface{}{"Price": 200, "Code": "F42"})
 	fmt.Println("Update End!")
+
+	// Delete
+	db.Delete(&model.Product{}, 4)
 }
