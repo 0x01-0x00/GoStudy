@@ -27,4 +27,8 @@ func main() {
 	db.Find(&products, "price = ?", 100) // 查找 price 字段值为 100 的记录
 	fmt.Println(products)
 	fmt.Println("Find End!")
+
+	// Update
+	db.Model(&product).Update("Price", 99) // 当使用 Model 方法，并且它有主键值时，主键将会被用于构建条件
+	fmt.Println("Update End!")
 }
