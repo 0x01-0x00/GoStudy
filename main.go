@@ -1,5 +1,7 @@
 package main
 
-func main() {
+import "GoStudy/gorm"
 
+func main() {
+	gorm.DBInit()
 }
