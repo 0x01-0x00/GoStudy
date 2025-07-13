@@ -30,5 +30,8 @@ func main() {
 
 	// Update
 	db.Model(&product).Update("Price", 99) // 当使用 Model 方法，并且它有主键值时，主键将会被用于构建条件
+	// Update - 更新多个字段
+	db.Model(&product).Updates(model.Product{Price: 99, Code: "F42"}) // 仅更新非零值字段
+	db.Model(&product).Updates(map[string]interface{}{"Price": 200, "Code": "F42"})
 	fmt.Println("Update End!")
 }
