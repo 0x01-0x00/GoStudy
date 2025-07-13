@@ -6,9 +6,9 @@ import (
 	"gorm.io/gorm"
 )
 
-func DBInit() {
+func DBInit() (db *gorm.DB, err error) {
 	dsn := "root:rootroot@tcp(47.122.87.56:3306)/gorm?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
@@ -20,4 +20,5 @@ func DBInit() {
 	if err != nil {
 		panic("failed to db.AutoMigrate")
 	}
+	return db, err
 }
