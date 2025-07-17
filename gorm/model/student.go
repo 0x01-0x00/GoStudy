@@ -20,7 +20,7 @@ type StudentA struct {
 	Name   string // 姓名
 	Age    int    // 年龄
 	Number string // 学号
-	// 重写外键
+	// 重写外键,重写引用
 	ClassRefer uint // 班级id
 	// `Student` belongs to `Class`, `ClassRefer` is the foreign key
 	Class Class `gorm:"foreignKey:ClassRefer;references:Uid"`
