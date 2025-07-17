@@ -21,6 +21,8 @@ func DBInit() (db *gorm.DB, err error) {
 		model.Score{},
 		model.Class{},
 		model.Student{},
+		model.Info{},
+		model.Hobby{},
 		model.Teacher{},
 	)
 	if err != nil {

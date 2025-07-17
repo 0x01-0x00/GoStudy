@@ -11,6 +11,13 @@ type Student struct {
 	ClassID uint // 班级id
 	// `Student` belongs to `Class`, `ClassID` is the foreign key
 	Class Class
+
+	// `Student` has one `Info`
+	Info Info
+
+	// `Student` has many `Hobby`
+	Hobbies []Hobby
+
 	// 嵌入方式1
 	Score // 成绩
 }
@@ -24,6 +31,7 @@ type StudentA struct {
 	ClassRefer uint // 班级id
 	// `Student` belongs to `Class`, `ClassRefer` is the foreign key
 	Class Class `gorm:"foreignKey:ClassRefer;references:Uid"`
+
 	// 嵌入方式2
 	Score Score `gorm:"embedded"` // 成绩
 }
