@@ -2,10 +2,11 @@ package main
 
 import (
 	"GoStudy/gorm"
+	"fmt"
 )
 
 func main() {
 	db, _ := gorm.DBInit()
-
-	gorm.DBDemo1(db)
+	fmt.Println(db)
+	//gorm.DBDemo1(db)
 }

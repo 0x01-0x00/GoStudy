@@ -17,6 +17,7 @@ func DBInit() (db *gorm.DB, err error) {
 	err = db.AutoMigrate(
 		model.Product{},
 		model.User{},
+		model.StudentA{},
 		model.Score{},
 		model.Class{},
 		model.Student{},
