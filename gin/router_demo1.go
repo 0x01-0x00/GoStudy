@@ -24,26 +24,32 @@ func RouterDemo1() {
 		ipad:    "ipad", // 小写私有字段，不会被 json 包序列化
 		Ipod:    "ipod",
 	}
-	// 定义路由
+
+	// GET /user
 	global.R.GET("/user", func(c *gin.Context) {
+		//name := c.Query("name") // 获取 query 参数
+		name := c.DefaultQuery("name", "0x00") // 获取 query 参数，如果没有则返回默认值
 		c.JSON(http.StatusOK, gin.H{
 			"message":     "GET",
 			"RouterDemo1": apple,
-			"name":        c.Query("name"),
+			"name":        name,
 		})
 	})
+	// POST /user
 	global.R.POST("/user", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message":     "POST",
 			"RouterDemo1": apple,
 		})
 	})
+	// PUT /user
 	global.R.PUT("/user", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message":     "PUT",
 			"RouterDemo1": apple,
 		})
 	})
+	// DELETE /user
 	global.R.DELETE("/user", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message":     "DELETE",
