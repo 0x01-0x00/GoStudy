@@ -29,6 +29,7 @@ func RouterDemo1() {
 		c.JSON(http.StatusOK, gin.H{
 			"message":     "GET",
 			"RouterDemo1": apple,
+			"name":        c.Query("name"),
 		})
 	})
 	global.R.POST("/user", func(c *gin.Context) {
