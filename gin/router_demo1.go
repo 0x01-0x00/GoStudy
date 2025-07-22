@@ -37,9 +37,13 @@ func RouterDemo1() {
 	})
 	// POST /user
 	global.R.POST("/user", func(c *gin.Context) {
+		user := c.PostForm("user")
+		password := c.PostForm("password")
 		c.JSON(http.StatusOK, gin.H{
 			"message":     "POST",
 			"RouterDemo1": apple,
+			"user":        user,
+			"password":    password,
 		})
 	})
 	// PUT /user
