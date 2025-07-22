@@ -11,7 +11,7 @@ type Apple struct {
 	Mac     string
 	Watch   string
 	Airpods string
-	ipad    string // 小写私有字段
+	ipad    string // 小写私有字段，不会被 json 包序列化
 	Ipod    string `json:"ipod"`
 }
 
@@ -21,7 +21,7 @@ func RouterDemo1() {
 		Mac:     "Mac",
 		Watch:   "Watch",
 		Airpods: "Airpods",
-		ipad:    "ipad",
+		ipad:    "ipad", // 小写私有字段，不会被 json 包序列化
 		Ipod:    "ipod",
 	}
 	// 定义路由
