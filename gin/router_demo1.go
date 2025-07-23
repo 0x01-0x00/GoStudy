@@ -25,6 +25,18 @@ func RouterDemo1() {
 		Ipod:    "ipod",
 	}
 
+	// GET /:param1/:param2
+	global.R.GET("/url/:param1/:param2", func(c *gin.Context) {
+		param1 := c.Param("param1")
+		param2 := c.Param("param2")
+		c.JSON(http.StatusOK, gin.H{
+			"message":     "GET",
+			"RouterDemo1": apple,
+			"param1":      param1,
+			"param2":      param2,
+		})
+	})
+
 	// GET /user
 	global.R.GET("/user", func(c *gin.Context) {
 		//name := c.Query("name") // 获取 query 参数
