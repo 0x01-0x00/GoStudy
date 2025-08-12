@@ -19,6 +19,10 @@ func DBInit() (db *gorm.DB, err error) {
 	// 迁移数据结构
 	err = db.AutoMigrate(
 		&model.UserTest{},
+		&model.Student{},
+		&model.Class{},
+		&model.StudentInfo{},
+		&model.Score{},
 	)
 	if err != nil {
 		panic("failed to db.AutoMigrate")

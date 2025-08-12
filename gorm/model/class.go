@@ -1,6 +1,8 @@
 package model
 
 type Class struct {
-	ID        uint
-	ClassName string
+	ID         uint
+	Refer      string
+	ClassLevel string
+	ClassNum   string
 }
