@@ -5,6 +5,7 @@ type Student struct {
 	StudentName string // 姓名
 	Age         int    // 年龄
 	Number      string // 学号
+	// 从属一方存入被从属一方的ID
 	// 多对一
 	//ClassID     uint   // 默认外键
 	//Class       Class
